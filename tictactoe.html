@@ -11,9 +11,9 @@ style="border:1px solid #c3c3c3;">
 </canvas>
 
 <script>
-var width = 500
-var height = 500
-var lineSize = 10
+var width = 500;
+var height = 500;
+var lineSize = 10;
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
@@ -22,6 +22,21 @@ ctx.fillRect(width/3 - (lineSize/2), 0, lineSize, height);
 ctx.fillRect(((2 * width) / 3) - (lineSize/2), 0, lineSize, height);
 ctx.fillRect(0, height/3 - (lineSize/2), width, lineSize);
 ctx.fillRect(0, (2 * height) / 3 - (lineSize/2), width, lineSize);
+
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
+
+canvas.addEventListener('click', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+    console.log("hello motto" + mousePos + "kjhgf");
+}, false);
+
 </script>
 </body>
 </html>
