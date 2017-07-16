@@ -13,14 +13,15 @@ style="border:1px solid #c3c3c3;">
 <script>
 var width = 500
 var height = 500
+var lineSize = 10
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-ctx.fillRect(0,0,555,69);
 
 ctx.fillStyle = "#000000";
-ctx.fillRect(width/3 - 5, 0, 10, height - 10);
-ctx.fillRect(((2 * width) / 3) - 5, 0, 10, height - 10);
+ctx.fillRect(width/3 - (lineSize/2), 0, lineSize, height);
+ctx.fillRect(((2 * width) / 3) - (lineSize/2), 0, lineSize, height);
+ctx.fillRect(0, height/3 - (lineSize/2), width, lineSize);
+ctx.fillRect(0, (2 * height) / 3 - (lineSize/2), width, lineSize);
 </script>
 </body>
 </html>
